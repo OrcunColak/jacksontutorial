@@ -1,0 +1,8 @@
+<concepts>
+    <movementType>
+        <concept code="001" description= "Configuration property 1"/>
+        <concept code="002" description= "Configuration property 2"/>
+        <concept code="003" description= "Configuration property 3"/>
+        <concept code="004" description= "Configuration property 4"/>
+    </movementType>
+</concepts>
