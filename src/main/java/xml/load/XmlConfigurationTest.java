@@ -8,6 +8,9 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Test we can load objects from XML
+ */
 @Slf4j
 public class XmlConfigurationTest {
 

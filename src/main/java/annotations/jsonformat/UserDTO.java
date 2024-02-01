@@ -1,4 +1,4 @@
-package jsonformat;
+package annotations.jsonformat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Setter;
