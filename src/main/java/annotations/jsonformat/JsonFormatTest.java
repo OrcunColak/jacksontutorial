@@ -14,9 +14,10 @@ public class JsonFormatTest {
 
     public static void main(String[] args) throws JsonProcessingException {
 
-        ObjectMapper objectMapper = new ObjectMapper();
         UserDTO userDTO = new UserDTO();
         userDTO.setRegistrationDate(new Date());
+
+        ObjectMapper objectMapper = new ObjectMapper();
         String jsonString = objectMapper.writeValueAsString(userDTO);
         // Local time is "2024-01-12 16:54:44"
         // UTC time is "2024-01-12 13:54:44"
