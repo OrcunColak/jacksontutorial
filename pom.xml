@@ -40,7 +40,8 @@
             <version>1.4.12</version>
         </dependency>
 
-
+        <!-- Besides JSON, the Jackson also supports other formats. One of them is XML. To enable XML support, you need to add
+        this dependency  -->
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
