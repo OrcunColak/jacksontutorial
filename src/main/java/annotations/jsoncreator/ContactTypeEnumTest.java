@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 
 // See https://medium.com/@shreeyaruias/using-enums-in-spring-boot-88d3115fa7ee
 @Slf4j
-public class ContactTypeEnumTest {
+class ContactTypeEnumTest {
 
     public static void main(String[] args) throws JsonProcessingException {
         serializeAndDeserializeWithJsonCreator();

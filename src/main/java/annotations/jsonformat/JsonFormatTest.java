@@ -10,7 +10,7 @@ import java.util.Date;
  * Test JsonFormat annotation pattern
  */
 @Slf4j
-public class JsonFormatTest {
+class JsonFormatTest {
 
     public static void main(String[] args) throws JsonProcessingException {
 

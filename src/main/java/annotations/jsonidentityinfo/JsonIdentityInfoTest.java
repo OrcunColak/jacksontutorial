@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class JsonIdentityInfoTest {
+class JsonIdentityInfoTest {
 
     public static void main(String[] args) throws JsonProcessingException {
 

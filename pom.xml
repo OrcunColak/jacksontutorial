@@ -37,7 +37,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.4.12</version>
+            <version>1.4.14</version>
         </dependency>
 
         <!-- Besides JSON, the Jackson also supports other formats. One of them is XML. To enable XML support, you need to add
@@ -45,6 +45,12 @@
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
+        </dependency>
+
+        <!-- support for "Java 8 Dates" -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
         </dependency>
 
     </dependencies>
