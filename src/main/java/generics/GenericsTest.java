@@ -19,11 +19,11 @@ class GenericsTest {
         log.info("Person equals : {}", equals);
     }
 
-    public static <T> String writeValueAsString(ObjectMapper objectMapper, T object) throws JsonProcessingException {
+    private static <T> String writeValueAsString(ObjectMapper objectMapper, T object) throws JsonProcessingException {
         return objectMapper.writeValueAsString(object);
     }
 
-    public static <T> T readValue(ObjectMapper objectMapper, String json, Class<T> valueType) throws JsonProcessingException {
+    private static <T> T readValue(ObjectMapper objectMapper, String json, Class<T> valueType) throws JsonProcessingException {
         return objectMapper.readValue(json, valueType);
     }
 }

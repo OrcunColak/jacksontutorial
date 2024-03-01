@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @JacksonXmlRootElement(localName = "concepts")
-public class Concepts {
+class Concepts {
 
     @JacksonXmlElementWrapper(localName = "movementType")
     private List<Concept> concept;

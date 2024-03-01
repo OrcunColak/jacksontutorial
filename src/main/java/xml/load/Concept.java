@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @JacksonXmlRootElement(localName = "concept")
-public class Concept {
+class Concept {
 
     @JacksonXmlProperty(isAttribute = true)
     private String code;

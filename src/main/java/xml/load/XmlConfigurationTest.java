@@ -12,7 +12,7 @@ import java.util.Map;
  * Test we can load objects from XML
  */
 @Slf4j
-public class XmlConfigurationTest {
+class XmlConfigurationTest {
 
     private final Map<String, Concept> conceptMap = new HashMap<>();
 
@@ -22,7 +22,7 @@ public class XmlConfigurationTest {
         log.info("Loaded XML {}", xmlConfigurationTest.conceptMap);
     }
 
-    public void loadXmlData() {
+    private void loadXmlData() {
         ClassLoader classLoader = getClass().getClassLoader();
         try (InputStream inputStream = classLoader
                 .getResourceAsStream("config.xml")) {
