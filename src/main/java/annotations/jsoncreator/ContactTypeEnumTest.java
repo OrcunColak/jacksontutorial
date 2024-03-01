@@ -22,10 +22,14 @@ class ContactTypeEnumTest {
         String json = objectMapper.writeValueAsString(contactDto);
         log.info("json : {}", json);
 
-        // Deserialize JSON
-        // Instead of com.fasterxml.jackson.core.JsonParseException we are getting IllegalArgumentException
-        ContactDto deserializedEnum = objectMapper.readValue("{\"contactType\":\"work1\"}", ContactDto.class);
+        try {
+            // Deserialize incorrect JSON
+            ContactDto deserializedEnum = objectMapper.readValue("{\"contactType\":\"work1\"}", ContactDto.class);
 
-        log.info("deserializedEnum : {}", deserializedEnum);
+            log.info("deserializedEnum : {}", deserializedEnum);
+        } catch (Exception exception) {
+            // This will have the message from my IllegalArgumentException
+            log.error("Exception {}", exception.getCause().getMessage());
+        }
     }
 }

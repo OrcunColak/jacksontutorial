@@ -1,4 +1,4 @@
-package annotations.jsonidentityinfo;
+package annotations.circularreference.jsonidentityinfo;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

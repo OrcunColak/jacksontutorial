@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ContactDto {
+class ContactDto {
 
     private ContactType contactType;
 }

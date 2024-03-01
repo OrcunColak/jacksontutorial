@@ -11,7 +11,7 @@ import java.util.Currency;
 @Getter
 @Setter
 @ToString
-public class Transaction {
+class Transaction {
     private BigDecimal amount;
     private Currency currency;
     private LocalDateTime date;

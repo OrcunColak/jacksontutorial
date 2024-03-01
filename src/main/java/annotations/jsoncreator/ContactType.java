@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 
-public enum ContactType {
+enum ContactType {
     WORK("work"),HOME("home"),PERSONAL("personal");
 
     private final String value;

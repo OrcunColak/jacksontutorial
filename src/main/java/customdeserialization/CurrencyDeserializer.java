@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.Currency;
 
 @Slf4j
-public class CurrencyDeserializer extends StdDeserializer<Currency> {
+class CurrencyDeserializer extends StdDeserializer<Currency> {
 
     public CurrencyDeserializer() {
         this(null);

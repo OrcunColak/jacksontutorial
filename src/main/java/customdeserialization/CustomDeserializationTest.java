@@ -12,7 +12,7 @@ import java.util.Currency;
  * See <a href="https://medium.com/@rajdeepify/custom-deserialization-using-jackson-7303be55dc34">...</a>
  */
 @Slf4j
-public class CustomDeserializationTest {
+class CustomDeserializationTest {
 
     public static void main(String[] args) throws JsonProcessingException {
         ObjectMapper objectMapper = createObjectMapper();
