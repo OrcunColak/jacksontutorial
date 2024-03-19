@@ -1,4 +1,4 @@
-package customdeserialization;
+package customdeserialization.without_annotation;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,9 +10,10 @@ import java.util.Currency;
 
 /**
  * See <a href="https://medium.com/@rajdeepify/custom-deserialization-using-jackson-7303be55dc34">...</a>
+ * This example demonstrates how to return a null object when the JSON is incorrect and can not be deserialized actually
  */
 @Slf4j
-class CustomDeserializationTest {
+class DeserializationTest {
 
     public static void main(String[] args) throws JsonProcessingException {
         ObjectMapper objectMapper = createObjectMapper();
