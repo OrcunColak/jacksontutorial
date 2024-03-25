@@ -1,4 +1,4 @@
-package customdeserialization.without_annotation;
+package customdeserialization.without_annotation.stddeserializer;
 
 import lombok.Getter;
 import lombok.Setter;
