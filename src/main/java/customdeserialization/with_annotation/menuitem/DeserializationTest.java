@@ -1,4 +1,4 @@
-package customdeserialization.with_annotation;
+package customdeserialization.with_annotation.menuitem;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -12,7 +12,7 @@ import java.util.List;
  * This example demonstrates how to deserialize an object from a large JSON file. Subsequently, a partial view of the object is serialized back into JSON format.
  */
 @Slf4j
-public class DeserializationTest {
+class DeserializationTest {
 
     public static void main(String[] args) throws JsonProcessingException {
 

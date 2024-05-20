@@ -1,4 +1,4 @@
-package customdeserialization.with_annotation;
+package customdeserialization.with_annotation.menuitem;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Builder;
