@@ -16,21 +16,35 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 
 // See https://medium.com/@ak123aryan/efficient-handling-of-large-json-files-in-java-using-custom-serialization-and-deserialization-eb9d822b990c
+// In this example @JsonDeserialize and @JsonSerialize annotations are used to indicate custom serde classses to be used by Jackson
+@Slf4j
 public class UserSerdeTest {
 
+    public static void main(String[] args) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-    private static final Logger log = LoggerFactory.getLogger(UserSerdeTest.class);
+        User user = new User();
+        user.setUserId("1");
+        user.setJsonString("foo");
+        String string = objectMapper.writeValueAsString(user);
 
+        User user1 = objectMapper.readValue(string, User.class);
+
+        log.info("Equals : {}", user.getUserId().equals(user1.getUserId()));
+    }
+
+    // The domain model object
+    // The jackson annotations for domain model object
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonDeserialize(using = UserDeserializer.class)
     @JsonSerialize(using = UserSerializer.class)
-
+    // The lombok annotations for domain model object
     @Getter
     @Setter
     @EqualsAndHashCode
@@ -60,18 +74,5 @@ public class UserSerdeTest {
         }
     }
 
-    public static void main(String[] args) throws JsonProcessingException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-        User user = new User();
-        user.setUserId("1");
-        user.setJsonString("foo");
-        String string = objectMapper.writeValueAsString(user);
-
-        User user1 = objectMapper.readValue(string, User.class);
-
-        log.info("Equals : {}", user.getUserId().equals(user1.getUserId()));
-
-    }
 }
