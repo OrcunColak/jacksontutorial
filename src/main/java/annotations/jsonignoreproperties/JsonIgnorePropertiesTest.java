@@ -1,8 +1,6 @@
 package annotations.jsonignoreproperties;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,6 +8,7 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 // See https://medium.com/@salvipriya97/how-to-convert-json-to-java-pojo-using-jackson-c522bc67462c
+// Use @JsonIgnoreProperties annotation to ignore unknown fields in JSON
 @Slf4j
 class JsonIgnorePropertiesTest {
 
@@ -18,12 +17,9 @@ class JsonIgnorePropertiesTest {
     @Setter
     @ToString
     private static class Person {
-        @JsonProperty("name")
-        @JsonInclude(JsonInclude.Include.NON_NULL)
+
         private String name;
 
-        @JsonProperty("age")
-        @JsonInclude(JsonInclude.Include.NON_DEFAULT)
         private int age;
 
     }
@@ -40,6 +36,5 @@ class JsonIgnorePropertiesTest {
         } catch (Exception exception) {
             log.error("Exception :", exception);
         }
-
     }
 }
