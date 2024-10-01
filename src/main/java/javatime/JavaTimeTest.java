@@ -8,10 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
 
-/**
- * If JavaTimeModule is not registered we get
- * Java 8 date/time type `java.time.LocalDate` not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" to enable handling
- */
+// If JavaTimeModule is not registered we get
+// Java 8 date/time type `java.time.LocalDate` not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" to enable handling
 @Slf4j
 class JavaTimeTest {
 
@@ -43,6 +41,7 @@ class JavaTimeTest {
 
     // See https://stackoverflow.com/questions/47120363/java-8-date-time-types-serialized-as-object-with-spring-boot
     private static ObjectMapper createObjectMapper2() {
+        // Requires jackson-datatype-jsr310
         return JsonMapper.builder()
                 .addModule(new JavaTimeModule())
                 .build();
