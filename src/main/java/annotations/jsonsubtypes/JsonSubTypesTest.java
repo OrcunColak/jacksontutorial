@@ -1,6 +1,5 @@
 package annotations.jsonsubtypes;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -41,7 +40,6 @@ class JsonSubTypesTest {
     @Getter
     @Setter
     static abstract class Animal {
-        @JsonProperty
         private String name; // The name of the animal
     }
 
@@ -49,7 +47,6 @@ class JsonSubTypesTest {
     @Getter
     @Setter
     static final class Dog extends Animal {
-        @JsonProperty
         private String breed; // The breed of the dog
     }
 
@@ -57,7 +54,6 @@ class JsonSubTypesTest {
     @Getter
     @Setter
     static final class Cat extends Animal {
-        @JsonProperty
         private boolean isIndoor; // Indicates if the cat is indoor
     }
 }
