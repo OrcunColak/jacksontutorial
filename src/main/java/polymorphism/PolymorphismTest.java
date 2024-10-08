@@ -29,8 +29,10 @@ class PolymorphismTest {
 
     private static void polymorphic(ObjectMapper objectMapper, Cat cat) throws JsonProcessingException {
         ObjectMapper clonedObjectMapper = objectMapper.copy();
+
+        // instruct Jackson to put type information on all non-final classes
         clonedObjectMapper
-                .activateDefaultTyping(objectMapper.getPolymorphicTypeValidator(), ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);
+                .activateDefaultTyping(objectMapper.getPolymorphicTypeValidator(), ObjectMapper.DefaultTyping.NON_FINAL_AND_ENUMS, JsonTypeInfo.As.PROPERTY);
         String json = clonedObjectMapper.writeValueAsString(cat);
 
         // Cat : {"@class":"polymorphism.PolymorphismTest$Cat","name":"Whiskers","indoor":true}

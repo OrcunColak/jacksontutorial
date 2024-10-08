@@ -23,13 +23,13 @@ class JsonSubTypesTest {
 
 
         // Deserialize Cat
-        Animal deserializedCat = objectMapper.readValue(catJson, Animal.class);
-        System.out.println("Deserialized Cat: " + deserializedCat.getName() + ", Is Indoor: " + ((Cat) deserializedCat).isIndoor());
+        Cat deserializedCat = (Cat) objectMapper.readValue(catJson, Animal.class);
+        System.out.println("Deserialized Cat: " + deserializedCat.getName() + ", Is Indoor: " + deserializedCat.isIndoor());
     }
 
     // Base class
     @JsonTypeInfo(
-            use = JsonTypeInfo.Id.NAME,
+            use = JsonTypeInfo.Id.NAME, // configure a more human-readable name for each type instead of the fully qualified class name
             include = JsonTypeInfo.As.PROPERTY,
             property = "type" // This property will determine the subtype
     )
