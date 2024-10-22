@@ -24,13 +24,13 @@ class JavaTimeTest {
     private static void test1(LocalDate localDate) throws JsonProcessingException {
         ObjectMapper objectMapper = createObjectMapper1();
         String json = objectMapper.writeValueAsString(localDate);
-        log.info("JSON : {}", json);
+        log.info("LocalDate JSON for ObjectMapper : {}", json);
     }
 
     private static void test2(LocalDate localDate) throws JsonProcessingException {
         ObjectMapper objectMapper = createObjectMapper2();
         String json = objectMapper.writeValueAsString(localDate);
-        log.info("JSON : {}", json);
+        log.info("LocalDate JSON for ObjectMapper built by JsonMapper: {}", json);
     }
 
     private static ObjectMapper createObjectMapper1() {

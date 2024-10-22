@@ -5,10 +5,10 @@ import com.fasterxml.jackson.databind.cfg.CacheProvider;
 import com.fasterxml.jackson.databind.cfg.DefaultCacheProvider;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 
-/**
- * See <a href="https://cowtowncoder.medium.com/jackson-2-16-rc1-overview-55dbb90c22d9">...</a>
- */
-public class JsonMapperTest {
+
+// See https://cowtowncoder.medium.com/jackson-2-16-rc1-overview-55dbb90c22d9
+// JsonMapper is used to build ObjectMapper
+class JsonMapperTest {
 
     private ObjectMapper build() {
         // reduce default ser/deser cache size; increase type cache
