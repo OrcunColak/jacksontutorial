@@ -7,10 +7,8 @@ import com.fasterxml.jackson.core.StreamReadFeature;
 import com.fasterxml.jackson.core.StreamWriteConstraints;
 import com.fasterxml.jackson.core.util.JsonRecyclerPools;
 
-/**
- * See <a href="https://cowtowncoder.medium.com/jackson-2-16-rc1-overview-55dbb90c22d9">...</a>
- */
-public class JsonFactoryTest {
+// See https://cowtowncoder.medium.com/jackson-2-16-rc1-overview-55dbb90c22d9
+class JsonFactoryTest {
 
     private JsonFactory build() {
         // let's use stricter limits than defaults:
