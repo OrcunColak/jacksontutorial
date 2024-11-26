@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 // See https://medium.com/@vino7tech/efficient-large-json-processing-in-spring-boot-using-jackson-streaming-api-a19366aa4942
@@ -30,27 +31,38 @@ class ProductsParser {
 
     public static void main(String[] args) {
 
-        List<Product> matchingProducts = new ArrayList<>();
+        List<Product> matchingProducts = Collections.emptyList();
 
         try (InputStream inputStream = TypeReference.class.getResourceAsStream("/json/products.json")) {
 
-            try (JsonParser jsonParser = new JsonFactory().createParser(inputStream)) {
-                // Start parsing JSON
-                if (jsonParser.nextToken() == JsonToken.START_ARRAY) {
-                    while (jsonParser.nextToken() != JsonToken.END_ARRAY) {
-                        Product product = readProduct(jsonParser);
+            JsonFactory jsonFactory = new JsonFactory();
+            try (JsonParser jsonParser = jsonFactory.createParser(inputStream)) {
 
-                        // Filter logic - Example: Only process products with price > 100
-                        if (product.getPrice() > 100) {
-                            matchingProducts.add(product);
-                        }
-                    }
+                while (!jsonParser.isClosed()) {
+                    // Start parsing JSON array
+                    matchingProducts = readArray(jsonParser);
                 }
             }
         } catch (IOException exception) {
             log.error("Exception ", exception);
         }
         log.info("Product List : {}", matchingProducts);
+    }
+
+    private static List<Product> readArray(JsonParser jsonParser) throws IOException {
+        List<Product> matchingProducts = new ArrayList<>();
+
+        if (jsonParser.nextToken() == JsonToken.START_ARRAY) {
+            while (jsonParser.nextToken() != JsonToken.END_ARRAY) {
+                Product product = readProduct(jsonParser);
+
+                // Filter logic - Example: Only process products with price > 100
+                if (product.getPrice() > 100) {
+                    matchingProducts.add(product);
+                }
+            }
+        }
+        return matchingProducts;
     }
 
     // The Product objects are deserialized incrementally.
