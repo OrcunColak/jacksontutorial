@@ -1,3 +1,6 @@
+# JSON
+Consider using Protobuf, Avro, or FlatBuffers instead of JSON
+
 # Heavy Object
 See https://medium.com/@kanishksinghpujari/the-one-java-optimization-that-made-my-code-10x-faster-without-changing-frameworks-1541cf79ec35
 
